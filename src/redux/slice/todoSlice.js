@@ -43,12 +43,20 @@ const todoSlice = createSlice({
                 state[taskIndex] = { ...state[taskIndex], ...action.payload };
                 localStorage.setItem('tasks', JSON.stringify(state));
             }
+        },
+        clearAllCompletedTodos: (state) => {
+            const pendingTodos = state.filter(state => {
+                return state.taskStatus === "Pending";
+            })
+            console.log("pendingTodos ", pendingTodos)
+            localStorage.setItem('tasks', JSON.stringify(pendingTodos));
+            return pendingTodos;
         }
 
 
     }
 })
 
-export const { addTask, markAsCompleted, markAsNotCompleted, deleteTodo, editTodo } = todoSlice.actions;
+export const { addTask, markAsCompleted, markAsNotCompleted, deleteTodo, editTodo, clearAllCompletedTodos } = todoSlice.actions;
 
 export default todoSlice.reducer;

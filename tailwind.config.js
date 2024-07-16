@@ -11,6 +11,11 @@ export default {
       quickSand: ['Quicksand', 'sans-serif'],
       monoton: ['Monoton', 'sans-serif'],
     },
+    screens: {
+      'tablet': '700px',
+      'break500': '500px',
+      'mobile': '400px',
+    },
   },
   plugins: [
     scrollbarGutter(), 

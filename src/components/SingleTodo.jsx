@@ -33,23 +33,23 @@ const SingleTodo = ({todo}) => {
             {/* todo completion status */}
             {todo.taskStatus === "Completed" ? (
                 <div onClick={handleMarkAsNotCompleted} 
-                    className='w-[1.875rem] h-[1.875rem] rounded-full flex items-center justify-center bg-[#4CAF50] '>
+                    className='w-[20px] h-[20px] break500:w-[1.875rem] break500:h-[1.875rem] rounded-full flex items-center cursor-pointer justify-center bg-[#4CAF50] '>
                     <IoMdCheckmark size={20} /> 
                 </div>
                 ): (
                 <div onClick={handleMarkAsCompleted} 
-                    className='w-[1.875rem] h-[1.875rem] rounded-full flex items-center justify-center outline outline-2 outline-[#f8f8f8]'>
+                    className='w-[20px] h-[20px] break500:w-[1.875rem] break500:h-[1.875rem] rounded-full flex items-center justify-center cursor-pointer outline outline-2 outline-[#f8f8f8]'>
     
                 </div>
                 )
             }
             {/* todo description */}
-            <div className={'w-[26.5rem] text-xl font-medium text-white ml-3  '
+            <div className={'w-[calc(100%-12px-20px-12px)] break500:w-[26.5rem] text-lg break500:text-xl font-medium text-white ml-3  '
                 +(todo.taskStatus === "Completed"?"line-through":"")}>{todo?.task}
             </div>
             {/* todo category & edit and delete button */}
-            <div className='w-[9.375rem] h-full flex flex-col justify-evenly'>
-                <div className='w-full h-[1.875rem] rounded-md text-white text-xl font-medium flex items-center justify-center'
+            <div className='w-[125px] break500:w-[9.375rem] h-full flex flex-col justify-evenly'>
+                <div className='w-full h-[1.875rem] rounded-md text-white text-base break500:text-xl font-medium flex items-center justify-center'
                     style={{background: `#${todo.color}`}}
                 >{todo?.category}</div>
                 {/* edit and delete div */}
