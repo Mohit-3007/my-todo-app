@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="w-full min-h-screen h-fit bg-[rgba(28,39,60,1)] overflow-x-hidden">
+    <div className="w-full min-h-screen h-fit bg-[rgba(28,39,60,1)] overflow-hidden">
       <HomePage />
     </div>
   );

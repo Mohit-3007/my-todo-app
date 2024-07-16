@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { scrollbarGutter, scrollbarWidth, scrollbarColor } = require('tailwind-scrollbar-utilities');
 export default {
   content: [
     "./index.html",
@@ -11,6 +12,10 @@ export default {
       monoton: ['Monoton', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    scrollbarGutter(), 
+    scrollbarWidth(), 
+    scrollbarColor(), 
+  ],
 }
 
